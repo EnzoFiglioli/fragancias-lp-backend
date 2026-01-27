@@ -1,9 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import products from '../../utils/data/data';
+import { Product } from './interfaces/product.interface';
 
 @Injectable()
 export class ProductsService {
-  getAllProducts() {
+  getAllProducts(): Product[] {
     return products;
   }
   getProductsByCategory(category: string) {
