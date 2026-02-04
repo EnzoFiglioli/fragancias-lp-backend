@@ -8,9 +8,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductModule } from './features/products/product.module';
 import { LoggerMiddleware } from './common/middlewares/logs.middleware';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
-  imports: [ProductModule],
+  imports: [
+    ProductModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client'),
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

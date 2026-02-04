@@ -22,7 +22,8 @@
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
-    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/platform-express": "^11.1.13",
+    "@nestjs/serve-static": "^5.0.4",
     "@prisma/client": "^7.3.0",
     "class-validator": "^0.14.3",
     "prisma": "^7.3.0",
