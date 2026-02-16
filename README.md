@@ -67,8 +67,8 @@ Swagger documenta:
 
 ### 1️⃣ Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo
+git clone https://github.com/EnzoFiglioli/api-server-malipi.git
+cd api-server-malipi
 ````
 
 ### 2️⃣ Instalar dependencias
@@ -109,6 +109,10 @@ Este proyecto fue desarrollado con fines **educativos y profesionales**, con foc
 * Preparación para entornos reales de producción
 
 ---
+
+## UML
+### Productos
+<img src="./src/utils/docs/ProductUML.png" alt="uml-productos">
 
 ## 📌 Notas finales
 

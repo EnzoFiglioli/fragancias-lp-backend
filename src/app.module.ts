@@ -4,22 +4,22 @@ import {
   NestModule,
   RequestMethod,
 } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
+
+import { PrismaModule } from './prisma/prisma.module';
 import { ProductModule } from './features/products/product.module';
+import { OrdersModule } from './features/orders/orders.module';
 import { LoggerMiddleware } from './common/middlewares/logs.middleware';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
 
 @Module({
   imports: [
-    ProductModule,
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client'),
+    ConfigModule.forRoot({
+      isGlobal: true,
     }),
+    PrismaModule,
+    ProductModule,
+    OrdersModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

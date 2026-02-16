@@ -1,8 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { IsInt, IsString, Min, IsNotEmpty, IsArray } from 'class-validator';
-import { CreateProduct } from '../interfaces/create-product.interface';
+import {
+  IsInt,
+  IsString,
+  Min,
+  IsNotEmpty,
+  IsEnum,
+  IsArray,
+} from 'class-validator';
+import { Gender } from '@prisma/client';
 
-export class CreateProductDto implements CreateProduct {
+export class CreateProductDto {
   @IsString()
   @IsNotEmpty()
   name: string;
@@ -12,19 +18,23 @@ export class CreateProductDto implements CreateProduct {
   description: string;
 
   @IsInt()
-  @Min(1)
+  @Min(0)
   stock: number;
 
-  @IsString()
-  @IsNotEmpty()
-  category: string;
+  @IsInt()
+  categoryId: number;
+
+  @IsInt()
+  brandId: number;
+
+  @IsEnum(Gender)
+  gender: Gender;
 
   @IsInt()
   @Min(10)
   price: number;
 
-  @IsString()
-  @IsNotEmpty()
   @IsArray()
-  pictures: string[];
+  @IsString()
+  pictures: [];
 }

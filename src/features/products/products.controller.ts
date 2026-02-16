@@ -7,24 +7,32 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
-import type { Product } from './interfaces/product.interface';
-import { ProductsService } from './products.service';
+import ProductsService from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
+import { ProductResponse } from './dto/productResponse';
 
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Get()
-  getProducts(@Query('category') category: string): Product[] {
-    if (!category) {
-      return this.productsService.getAllProducts();
+  async getProducts(
+    @Query('brand') brand?: string,
+    @Query('category') category?: string,
+  ): Promise<ProductResponse[]> {
+    if (!category && !brand) {
+      return await this.productsService.getAllProducts();
     }
-    return this.productsService.getProductsByCategory(category);
+    return await this.productsService.getProductsByFilters({ category, brand });
+  }
+
+  @Get('offers')
+  getProductsWithOffers() {
+    return this.productsService.getProductsWithOffers();
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number): Product {
+  findOne(@Param('id', ParseIntPipe) id: number): Promise<ProductResponse> {
     return this.productsService.getProductsById(id);
   }
 
