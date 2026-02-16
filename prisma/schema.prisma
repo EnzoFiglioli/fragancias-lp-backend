@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -13,10 +13,12 @@ enum Gender {
   UNISEX
 }
 
-model Offers {
-  id Int @id @default(autoincrement())
-  productId Int 
-  product Product @relation(fields: [productId], references: [id])
+model Offer {
+  id        Int     @id @default(autoincrement())
+  productId Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
 }
 
 model Brand {
@@ -38,21 +40,24 @@ model Product {
   price       Int
   categoryId  Int
   stock       Int?      @default(1)
-  pictures    Picture[]
-  category    Category  @relation(fields: [categoryId], references: [id], map: "Product_category_fk")
   gender      Gender
   brandId     Int
-  brand       Brand     @relation(fields: [brandId], references: [id])
-  offers Offers[]
 
-  @@index([categoryId], map: "Product_category_fk")
+  pictures    Picture[]
+  category    Category  @relation(fields: [categoryId], references: [id])
+  brand       Brand     @relation(fields: [brandId], references: [id])
+  offers      Offer[]
+
+  @@index([categoryId])
+  @@index([brandId])
 }
 
 model Picture {
   id        Int     @id @default(autoincrement())
   url       String  @db.VarChar(255)
   productId Int
-  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade, map: "Picture_product_fk")
 
-  @@index([productId], map: "Picture_product_fk")
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
 }
