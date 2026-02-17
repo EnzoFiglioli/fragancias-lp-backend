@@ -9,7 +9,7 @@ datasource db {
 
 enum Gender {
   MALE
-  FEMAALE
+  FEMALE
   UNISEX
 }
 
