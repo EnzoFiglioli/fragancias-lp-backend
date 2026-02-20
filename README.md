@@ -79,4 +79,4 @@ npm run test
 ---
 
 ## 🔗 Repositorio Frontend
-👉 [Ver backend](https://github.com/EnzoFiglioli/Fragancias-LP-Frontend)
+👉 [Ver frontend](https://github.com/EnzoFiglioli/Fragancias-LP-Frontend)
