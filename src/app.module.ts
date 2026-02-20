@@ -9,6 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { ProductModule } from './features/products/product.module';
 import { OrdersModule } from './features/orders/orders.module';
+import { HealthController } from './health.controller';
 import { LoggerMiddleware } from './common/middlewares/logs.middleware';
 
 @Module({
@@ -20,6 +21,7 @@ import { LoggerMiddleware } from './common/middlewares/logs.middleware';
     ProductModule,
     OrdersModule,
   ],
+  controllers:[HealthController],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
