@@ -1,18 +1,15 @@
-# 📦 Fragancias LP - Backend
+# ⚙️🌐 Fragancias LP - Backend
 
 API backend para la gestión de un catálogo de productos de cosmética, pensada para una vendedora independiente.  
 Permite administrar productos, stock y categorías, y está diseñada con buenas prácticas para ser mantenible y escalable.
-
-El objetivo del proyecto es **simular un caso real**, priorizando código limpio, arquitectura clara y uso correcto de NestJS.
 
 ---
 
 ## 🛠️ Tecnologías utilizadas
 
-- **Node.js**
 - **NestJS**
 - **TypeScript**
-- **Prisma ORM** (o la DB que estés usando)
+- **Prisma ORM**
 - **PostgreSQL
 ---
 
@@ -36,7 +33,6 @@ src/
 - DTOs para validación y contratos de API
 - Servicios enfocados en lógica de negocio
 - Infraestructura desacoplada de la capa HTTP
-- Preparado para evolucionar a arquitecturas más complejas si el dominio crece
 
 ---
 
@@ -76,26 +72,9 @@ npm run test
 
 ---
 
-## 🎯 Objetivo del proyecto
-
-Este proyecto fue desarrollado con fines **educativos y profesionales**, con foco en:
-
-* Buenas prácticas de backend
-* Código legible y mantenible
-* Estructura clara para trabajo en equipo
-* Preparación para entornos reales de producción
-
----
-
 ## UML
 ### Productos
 <img src="./src/utils/docs/ProductUML.png" alt="uml-productos">
-
-## 📌 Notas finales
-
-* No se aplicó sobre-ingeniería innecesaria
-* La arquitectura está pensada para crecer según la complejidad del negocio
-* El código prioriza claridad por sobre patrones complejos
 
 ---
 
