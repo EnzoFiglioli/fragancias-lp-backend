@@ -1,4 +1,4 @@
-# 📦 Catálogo de Ventas – Cosméticos
+# 📦 Fragancias LP - Backend
 
 API backend para la gestión de un catálogo de productos de cosmética, pensada para una vendedora independiente.  
 Permite administrar productos, stock y categorías, y está diseñada con buenas prácticas para ser mantenible y escalable.
@@ -13,10 +13,7 @@ El objetivo del proyecto es **simular un caso real**, priorizando código limpio
 - **NestJS**
 - **TypeScript**
 - **Prisma ORM** (o la DB que estés usando)
-- **PostgreSQL / SQLite** (según config)
-- **Swagger (OpenAPI)**
-- **Jest** (testing)
-
+- **PostgreSQL
 ---
 
 ## 🏗️ Arquitectura
@@ -43,32 +40,12 @@ src/
 
 ---
 
-## 📚 Documentación de la API
-
-La API está documentada con **Swagger (OpenAPI)**.
-
-Una vez levantado el proyecto, se puede acceder en:
-
-```
-
-[http://localhost:3000/api](http://localhost:3000/api)
-
-````
-
-Swagger documenta:
-- Endpoints disponibles
-- DTOs de entrada
-- Validaciones
-- Autenticación (si aplica)
-
----
-
 ## 🚀 Instalación y ejecución
 
 ### 1️⃣ Clonar el repositorio
 ```bash
-git clone https://github.com/EnzoFiglioli/api-server-malipi.git
-cd api-server-malipi
+git clone https://github.com/EnzoFiglioli/Fragancias-LP-Backend.git
+cd Fragancias-LP-Backend
 ````
 
 ### 2️⃣ Instalar dependencias
@@ -122,7 +99,5 @@ Este proyecto fue desarrollado con fines **educativos y profesionales**, con foc
 
 ---
 
-## 👤 Autor
-
-**Enzo Figlioli**
-Backend Developer
+## 🔗 Repositorio Frontend
+👉 [Ver backend](https://github.com/EnzoFiglioli/Fragancias-LP-Frontend)
